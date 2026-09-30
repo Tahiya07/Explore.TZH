@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrollEffects from "./scroll-effects";
+import NeuralOrbit from "@/components/NeuralOrbit";
 
 const projects = [
   {
@@ -10,8 +11,7 @@ const projects = [
       "A privacy-conscious academic assistant designed to run locally. It combines document ingestion, semantic retrieval, Bloom’s taxonomy classification, and guided learning workflows.",
     details: ["Qwen2.5", "FAISS + BGE-small", "llama.cpp", "FedProx"],
     href: "https://github.com/Tahiya07/Eduguard",
-    label: "VIEW SOURCE",
-    featured: true,
+    accent: "blue",
   },
   {
     number: "02",
@@ -19,153 +19,386 @@ const projects = [
     title: "UAP CSE Assistant",
     summary:
       "A department-focused assistant that retrieves information from a curated knowledge base to help students navigate Computer Science and Engineering resources.",
-    details: ["Next.js", "Retrieval-augmented generation", "BGE embeddings", "Capacitor"],
+    details: ["Next.js", "RAG", "BGE embeddings", "Capacitor"],
     href: "https://github.com/Tahiya07/Web-scraping",
-    label: "VIEW SOURCE",
+    accent: "violet",
   },
   {
     number: "03",
-    type: "INTERNSHIP PROJECT · CHATBOT",
+    type: "INTERNSHIP · RULE-BASED CHATBOT",
     title: "Elio",
     summary:
-      "A rule-based chatbot experience built as an internship project, with a responsive interface and a path to web and Android delivery—without relying on a hosted LLM.",
+      "A rule-based chatbot experience built as an internship project, with a responsive interface and a path to web and Android delivery without relying on a hosted LLM.",
     details: ["React", "TypeScript", "Next.js", "Capacitor"],
     href: "https://github.com/Tahiya07/DecodeLabs-Internship",
-    label: "VIEW SOURCE",
+    accent: "magenta",
   },
 ];
 
 const capabilities = [
-  { title: "AI & MACHINE LEARNING", text: "LLMs, retrieval-augmented generation, deep learning, model evaluation, and federated learning." },
-  { title: "SOFTWARE ENGINEERING", text: "Full-stack interfaces, API integration, practical application architecture, and deployment." },
-  { title: "RESEARCH & EXPERIMENTS", text: "Comparative evaluation, reproducible experiments, model adaptation, and evidence-led iteration." },
+  {
+    index: "01",
+    title: "AI / ML",
+    text: "LLMs, retrieval-augmented generation, deep learning, evaluation, and federated learning.",
+  },
+  {
+    index: "02",
+    title: "SOFTWARE",
+    text: "Full-stack interfaces, APIs, application architecture, and practical deployment.",
+  },
+  {
+    index: "03",
+    title: "RESEARCH",
+    text: "Comparative experiments, model adaptation, reproducibility, and evidence-led iteration.",
+  },
 ];
 
 const technologies = [
-  "Python", "PyTorch", "Transformers", "FAISS", "llama.cpp", "FastAPI",
-  "TypeScript", "React", "Next.js", "Node.js", "Capacitor", "Git",
+  "Python",
+  "PyTorch",
+  "Transformers",
+  "FAISS",
+  "llama.cpp",
+  "FastAPI",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Capacitor",
+  "Git",
 ];
 
 export default function Home() {
   return (
     <main className="portfolio">
       <ScrollEffects />
+
       <header className="site-header">
         <Link className="wordmark" href="#home" aria-label="Tahiya Zareen home">
           <span className="wordmark-mark">TZ</span>
-          <span>TAHIYA ZAREEN <small>ENGINEERING PORTFOLIO</small></span>
+          <span className="wordmark-copy">
+            TAHIYA ZAREEN
+            <small>AI / ML · SOFTWARE</small>
+          </span>
         </Link>
+
         <nav className="main-nav" aria-label="Main navigation">
-          <Link href="#work">Work</Link>
-          <Link href="#research">Research</Link>
-          <Link href="#about">About</Link>
-          <Link href="#contact">Contact</Link>
+          <Link href="#work">WORK</Link>
+          <Link href="#research">RESEARCH</Link>
+          <Link href="#about">ABOUT</Link>
+          <Link href="#contact">CONTACT</Link>
         </nav>
-        <a className="header-link" href="https://github.com/Tahiya07" target="_blank" rel="noreferrer">
+
+        <a
+          className="header-link"
+          href="https://github.com/Tahiya07"
+          target="_blank"
+          rel="noreferrer"
+        >
           GITHUB <span aria-hidden="true">↗</span>
         </a>
       </header>
 
-      <section className="hero section-wrap" id="home" data-reveal>
-        <div className="hero-topline">
-          <span><i className="status-dot" /> AI / ML ENGINEERING · SOFTWARE DEVELOPMENT</span>
-          <span className="hero-index">PORTFOLIO — 2026</span>
-        </div>
-        <div className="hero-title-wrap">
-          <p className="eyebrow">HELLO, I’M TAHIYA</p>
-          <h1 className="hero-title"><span>BUILDING</span><span className="hero-title-second">INTELLIGENT<span className="title-period">.</span></span><span>SYSTEMS<span className="title-outline"> THAT MATTER</span></span></h1>
-          <div className="hero-aside">
-            <span className="aside-rule" />
-            <p>I work across machine learning, language technologies, and software engineering—turning experiments into useful, thoughtfully designed systems.</p>
-            <a className="text-link" href="#work">EXPLORE SELECTED WORK <span aria-hidden="true">↓</span></a>
+      <section className="hero section-wrap" id="home">
+        <div className="hero-grid">
+          <div className="hero-copy" data-reveal>
+            <div className="hero-kicker">
+              <span className="status-dot" />
+              BUILDING WITH MODELS, DATA & CODE
+            </div>
+
+            <p className="eyebrow">TAHIYA ZAREEN HIYA / 2026</p>
+
+            <h1 className="hero-title">
+              <span className="hero-line hero-line-one">AI/ML</span>
+              <span className="hero-line hero-line-two">ENGINEER</span>
+              <span className="hero-line hero-line-three">&amp; DEVELOPER.</span>
+            </h1>
+
+            <p className="hero-description">
+              I build intelligent systems where machine learning research,
+              software engineering, and human-facing interfaces meet.
+            </p>
+
+            <div className="hero-actions">
+              <a className="hero-action hero-action-primary" href="#work">
+                EXPLORE THE WORK <span>↓</span>
+              </a>
+              <Link className="hero-action hero-action-secondary" href="/lab">
+                ENTER THE 3D LAB <span>↗</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <NeuralOrbit />
+            <div className="hero-visual-label hero-visual-label-top">
+              <span>NEURAL FIELD</span>
+              <span>01 / 01</span>
+            </div>
+            <div className="hero-visual-label hero-visual-label-bottom">
+              <span>MODELS → SYSTEMS</span>
+              <span className="hero-visual-pulse" />
+              <span>LOCAL · OPEN · EXPERIMENTAL</span>
+            </div>
           </div>
         </div>
-        <div className="hero-bottom">
-          <span>RESEARCH-MINDED. ENGINEERING-LED.</span>
-          <span className="scroll-note"><span className="scroll-line" /> SCROLL TO EXPLORE</span>
+
+        <div className="hero-bottomline" data-reveal>
+          <span>SELECTED WORK / RESEARCH / EXPERIMENTS</span>
+          <span className="hero-scroll">
+            <i />
+            SCROLL TO EXPLORE
+          </span>
           <span>DHAKA, BANGLADESH</span>
         </div>
-        <div className="hero-orbit orbit-one" aria-hidden="true" />
-        <div className="hero-orbit orbit-two" aria-hidden="true" />
-        <div className="hero-crosshair" aria-hidden="true">+</div>
       </section>
 
-      <section className="intro-band" data-reveal>
-        <div className="section-wrap intro-band-inner">
-          <p className="eyebrow">01 / THE APPROACH</p>
-          <p className="intro-statement">Good engineering connects <span>research, responsible implementation,</span> and the experience of the person using the product.</p>
-          <span className="intro-symbol" aria-hidden="true">↘</span>
+      <section className="intro-section section-wrap" data-reveal>
+        <div className="section-marker">
+          <span>00</span>
+          <i />
+          ORIENTATION
+        </div>
+        <div className="intro-copy">
+          <p>
+            The portfolio is a map of systems I’ve built — from lightweight
+            language models and local retrieval pipelines to real products
+            shipped for the web and mobile.
+          </p>
+        </div>
+        <div className="intro-side">
+          <span>RESEARCH MINDED</span>
+          <span>ENGINEERING LED</span>
         </div>
       </section>
 
-      <section className="work-section section-wrap" id="work" data-reveal>
-        <div className="section-heading">
-          <div><p className="eyebrow">02 / SELECTED WORK</p><h2>Made to <em>solve.</em></h2></div>
-          <p className="section-note">A selection of research and software projects. Each project links to its source repository for technical details.</p>
+      <section className="work-section section-wrap" id="work">
+        <div className="section-header" data-reveal>
+          <div>
+            <span className="section-marker">
+              <span>01</span>
+              <i />
+              SELECTED SYSTEMS
+            </span>
+            <h2>
+              Things I’ve
+              <br />
+              <em>built.</em>
+            </h2>
+          </div>
+          <p>
+            Three projects across academic AI, retrieval systems, and
+            interactive software.
+          </p>
         </div>
-        <div className="project-list">
-          {projects.map((project) => (
-            <article className={`project-card ${project.featured ? "project-card-featured" : ""}`} key={project.number} data-reveal style={{ transitionDelay: `${Number(project.number) * 90}ms` }}>
-              <div className="project-visual" aria-hidden="true">
-                <div className={`visual-art visual-art-${project.number}`}>
-                  {project.number === "01" ? <><span className="art-node node-a" /><span className="art-node node-b" /><span className="art-node node-c" /><span className="art-link link-a" /><span className="art-link link-b" /><span className="art-core">E</span><span className="art-caption">LOCAL / RETRIEVAL / GENERATION</span></> :
-                   project.number === "02" ? <><span className="art-window"><i /><i /><i /><b>UAP / CSE</b><small>KNOWLEDGE → ANSWERS</small></span><span className="art-grid" /></> :
-                   <><span className="elio-orbit elio-orbit-a" /><span className="elio-orbit elio-orbit-b" /><span className="elio-core">e.</span><span className="art-caption">RULE-BASED CONVERSATION</span></>}
+
+        <div className="system-stack">
+          {projects.map((project, index) => (
+            <article
+              className="system-project"
+              key={project.number}
+              data-reveal
+              style={{ transitionDelay: `${index * 110}ms` }}
+            >
+              <div className={`system-visual system-visual-${project.accent}`}>
+                <div className="system-noise" />
+                <div className="system-grid" />
+                <div className="system-orbit system-orbit-main" />
+                <div className="system-orbit system-orbit-alt" />
+                <div className="system-orbit-node" />
+                <span className="system-code">{project.number}</span>
+                <span className="system-visual-caption">
+                  {index === 0
+                    ? "LOCAL INTELLIGENCE"
+                    : index === 1
+                      ? "KNOWLEDGE RETRIEVAL"
+                      : "CONVERSATIONAL LOGIC"}
+                </span>
+              </div>
+
+              <div className="system-content">
+                <div className="system-meta">
+                  <span>{project.type}</span>
+                  <span>{project.number} / 03</span>
                 </div>
-                <span className="project-number">{project.number}</span>
-              </div>
-              <div className="project-info">
-                <p className="project-type">{project.type}</p>
                 <h3>{project.title}</h3>
-                <p className="project-summary">{project.summary}</p>
-                <ul className="tag-list">{project.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
-                <a className="project-link" href={project.href} target="_blank" rel="noreferrer">{project.label} <span aria-hidden="true">↗</span></a>
+                <p>{project.summary}</p>
+                <div className="system-footer">
+                  <div className="system-tags">
+                    {project.details.map((detail) => (
+                      <span key={detail}>{detail}</span>
+                    ))}
+                  </div>
+                  <a
+                    className="system-link"
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    SOURCE <span>↗</span>
+                  </a>
+                </div>
               </div>
-              <span className="project-index" aria-hidden="true">{project.number} / 03</span>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="research-section" id="research" data-reveal>
-        <div className="section-wrap research-inner">
-          <div className="research-heading">
-            <p className="eyebrow">03 / RESEARCH DIRECTION</p>
-            <h2>Small models.<br /><em>Real constraints.</em></h2>
+      <section className="research-section" id="research">
+        <div className="research-glow" aria-hidden="true" />
+        <div className="section-wrap research-layout" data-reveal>
+          <div>
+            <span className="section-marker">
+              <span>02</span>
+              <i />
+              RESEARCH
+            </span>
+            <h2>
+              Small models.
+              <br />
+              <em>Real constraints.</em>
+            </h2>
           </div>
-          <div className="research-copy">
-            <p className="research-lead">My current academic work explores lightweight multimodal language-model systems for privacy-conscious academic assistance in university environments.</p>
-            <p>The work brings together local inference, document understanding, semantic retrieval, Bloom’s taxonomy classification, and evaluation of model behavior under practical resource constraints.</p>
-            <div className="research-meta"><span>THESIS</span><span>A Lightweight Multi-Modal Tiny LLM Framework for Privacy-Preserving Academic Assistance in University Environments</span></div>
-            <a className="text-link" href="https://github.com/Tahiya07/Eduguard" target="_blank" rel="noreferrer">EXPLORE THE IMPLEMENTATION <span aria-hidden="true">↗</span></a>
+
+          <div className="research-body">
+            <p className="research-lead">
+              My current academic work explores lightweight multimodal
+              language-model systems for privacy-conscious academic assistance
+              in university environments.
+            </p>
+            <p>
+              The work brings together local inference, document
+              understanding, semantic retrieval, Bloom’s taxonomy
+              classification, and model evaluation under practical resource
+              constraints.
+            </p>
+            <div className="research-spec">
+              <span>THESIS</span>
+              <p>
+                A Lightweight Multi-Modal Tiny LLM Framework for
+                Privacy-Preserving Academic Assistance in University
+                Environments
+              </p>
+            </div>
+            <a
+              className="hero-action hero-action-secondary"
+              href="https://github.com/Tahiya07/Eduguard"
+              target="_blank"
+              rel="noreferrer"
+            >
+              VIEW IMPLEMENTATION <span>↗</span>
+            </a>
           </div>
-          <div className="research-stamp" aria-hidden="true"><span>LOCAL FIRST</span><b>AI</b><span>MEASURE WHAT MATTERS</span></div>
+        </div>
+
+        <div className="research-orbit" aria-hidden="true">
+          <span />
+          <span />
+          <b>TZ</b>
         </div>
       </section>
 
-      <section className="capabilities-section section-wrap" id="about" data-reveal>
-        <div className="section-heading">
-          <div><p className="eyebrow">04 / HOW I WORK</p><h2>Curious by nature.<br /><em>Precise by practice.</em></h2></div>
-          <p className="section-note">I enjoy moving between model behavior, system architecture, and the interface that makes a tool understandable.</p>
+      <section className="about-section section-wrap" id="about">
+        <div className="section-header" data-reveal>
+          <div>
+            <span className="section-marker">
+              <span>03</span>
+              <i />
+              CAPABILITIES
+            </span>
+            <h2>
+              From model
+              <br />
+              <em>to product.</em>
+            </h2>
+          </div>
+          <p>
+            I enjoy moving between model behaviour, system architecture, and
+            the interface that makes a tool understandable.
+          </p>
         </div>
+
         <div className="capability-grid">
-          {capabilities.map((item, index) => <article className="capability-card" key={item.title} data-reveal><span className="capability-index">0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p><span className="capability-arrow" aria-hidden="true">↗</span></article>)}
+          {capabilities.map((item) => (
+            <article className="capability" key={item.index} data-reveal>
+              <span>{item.index}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <i aria-hidden="true">↗</i>
+            </article>
+          ))}
         </div>
-        <div className="technology-row"><p className="eyebrow">TOOLS IN MY WORKFLOW</p><ul>{technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul></div>
+
+        <div className="technology-map" data-reveal>
+          <span className="section-marker">
+            <span>04</span>
+            <i />
+            TOOLKIT
+          </span>
+          <div className="technology-list">
+            {technologies.map((technology) => (
+              <span key={technology}>{technology}</span>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className="lab-invite" data-reveal>
-        <div className="section-wrap lab-invite-inner">
-          <div><p className="eyebrow">A DIFFERENT WAY TO EXPLORE</p><h2>Step inside<br /><em>the lab.</em></h2><p>The original interactive 3D laboratory is still here—now as an optional, immersive view of the portfolio.</p></div>
-          <Link className="lab-launch" href="/lab"><span className="lab-launch-icon">↗</span><span>ENTER THE 3D LAB<small>IMMERSIVE EXPERIENCE</small></span></Link>
-          <div className="lab-rings" aria-hidden="true"><i /><i /><i /><b>TZ</b></div>
+      <section className="lab-section" data-reveal>
+        <div className="lab-section-field" aria-hidden="true">
+          <div />
+          <div />
+          <div />
+        </div>
+        <div className="section-wrap lab-section-inner">
+          <div>
+            <span className="section-marker">
+              <span>05</span>
+              <i />
+              IMMERSIVE MODE
+            </span>
+            <h2>
+              Step inside
+              <br />
+              <em>the lab.</em>
+            </h2>
+          </div>
+          <Link className="lab-launch" href="/lab">
+            <span>
+              ENTER 3D LAB
+              <small>EXPLORE THE PORTFOLIO AS A SPACE</small>
+            </span>
+            <b>↗</b>
+          </Link>
         </div>
       </section>
 
       <footer className="site-footer section-wrap" id="contact" data-reveal>
-        <p className="eyebrow">05 / OPEN CHANNEL</p>
-        <h2>Have a thoughtful<br />problem to <em>solve?</em></h2>
-        <div className="footer-bottom"><p>Interested in AI engineering, research, or building useful software? I’d be glad to connect.</p><a className="footer-contact" href="https://github.com/Tahiya07" target="_blank" rel="noreferrer">LET’S CONNECT <span aria-hidden="true">↗</span></a><span className="footer-mark">TZH © 2026</span></div>
+        <span className="section-marker">
+          <span>06</span>
+          <i />
+          OPEN CHANNEL
+        </span>
+        <h2>
+          Let’s build
+          <br />
+          something <em>useful.</em>
+        </h2>
+        <div className="footer-line">
+          <p>
+            Interested in AI engineering, research, or building software with
+            a real purpose? Let’s connect.
+          </p>
+          <a
+            className="system-link"
+            href="https://github.com/Tahiya07"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GITHUB <span>↗</span>
+          </a>
+          <span>TZH © 2026</span>
+        </div>
       </footer>
     </main>
   );
