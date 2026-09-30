@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollEffects from "./scroll-effects";
 
 const projects = [
   {
@@ -48,6 +49,7 @@ const technologies = [
 export default function Home() {
   return (
     <main className="portfolio">
+      <ScrollEffects />
       <header className="site-header">
         <Link className="wordmark" href="#home" aria-label="Tahiya Zareen home">
           <span className="wordmark-mark">TZ</span>
@@ -64,7 +66,7 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero section-wrap" id="home">
+      <section className="hero section-wrap" id="home" data-reveal>
         <div className="hero-topline">
           <span><i className="status-dot" /> AI / ML ENGINEERING · SOFTWARE DEVELOPMENT</span>
           <span className="hero-index">PORTFOLIO — 2026</span>
@@ -88,7 +90,7 @@ export default function Home() {
         <div className="hero-crosshair" aria-hidden="true">+</div>
       </section>
 
-      <section className="intro-band">
+      <section className="intro-band" data-reveal>
         <div className="section-wrap intro-band-inner">
           <p className="eyebrow">01 / THE APPROACH</p>
           <p className="intro-statement">Good engineering connects <span>research, responsible implementation,</span> and the experience of the person using the product.</p>
@@ -96,14 +98,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work-section section-wrap" id="work">
+      <section className="work-section section-wrap" id="work" data-reveal>
         <div className="section-heading">
           <div><p className="eyebrow">02 / SELECTED WORK</p><h2>Made to <em>solve.</em></h2></div>
           <p className="section-note">A selection of research and software projects. Each project links to its source repository for technical details.</p>
         </div>
         <div className="project-list">
           {projects.map((project) => (
-            <article className={`project-card ${project.featured ? "project-card-featured" : ""}`} key={project.number}>
+            <article className={`project-card ${project.featured ? "project-card-featured" : ""}`} key={project.number} data-reveal style={{ "--project-index": project.number } as React.CSSProperties}>
               <div className="project-visual" aria-hidden="true">
                 <div className={`visual-art visual-art-${project.number}`}>
                   {project.number === "01" ? <><span className="art-node node-a" /><span className="art-node node-b" /><span className="art-node node-c" /><span className="art-link link-a" /><span className="art-link link-b" /><span className="art-core">E</span><span className="art-caption">LOCAL / RETRIEVAL / GENERATION</span></> :
@@ -125,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="research-section" id="research">
+      <section className="research-section" id="research" data-reveal>
         <div className="section-wrap research-inner">
           <div className="research-heading">
             <p className="eyebrow">03 / RESEARCH DIRECTION</p>
@@ -141,18 +143,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="capabilities-section section-wrap" id="about">
+      <section className="capabilities-section section-wrap" id="about" data-reveal>
         <div className="section-heading">
           <div><p className="eyebrow">04 / HOW I WORK</p><h2>Curious by nature.<br /><em>Precise by practice.</em></h2></div>
           <p className="section-note">I enjoy moving between model behavior, system architecture, and the interface that makes a tool understandable.</p>
         </div>
         <div className="capability-grid">
-          {capabilities.map((item, index) => <article className="capability-card" key={item.title}><span className="capability-index">0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p><span className="capability-arrow" aria-hidden="true">↗</span></article>)}
+          {capabilities.map((item, index) => <article className="capability-card" key={item.title} data-reveal><span className="capability-index">0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p><span className="capability-arrow" aria-hidden="true">↗</span></article>)}
         </div>
         <div className="technology-row"><p className="eyebrow">TOOLS IN MY WORKFLOW</p><ul>{technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul></div>
       </section>
 
-      <section className="lab-invite">
+      <section className="lab-invite" data-reveal>
         <div className="section-wrap lab-invite-inner">
           <div><p className="eyebrow">A DIFFERENT WAY TO EXPLORE</p><h2>Step inside<br /><em>the lab.</em></h2><p>The original interactive 3D laboratory is still here—now as an optional, immersive view of the portfolio.</p></div>
           <Link className="lab-launch" href="/lab"><span className="lab-launch-icon">↗</span><span>ENTER THE 3D LAB<small>IMMERSIVE EXPERIENCE</small></span></Link>
@@ -160,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer section-wrap" id="contact">
+      <footer className="site-footer section-wrap" id="contact" data-reveal>
         <p className="eyebrow">05 / OPEN CHANNEL</p>
         <h2>Have a thoughtful<br />problem to <em>solve?</em></h2>
         <div className="footer-bottom"><p>Interested in AI engineering, research, or building useful software? I’d be glad to connect.</p><a className="footer-contact" href="https://github.com/Tahiya07" target="_blank" rel="noreferrer">LET’S CONNECT <span aria-hidden="true">↗</span></a><span className="footer-mark">TZH © 2026</span></div>
