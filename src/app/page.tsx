@@ -105,7 +105,7 @@ export default function Home() {
         </div>
         <div className="project-list">
           {projects.map((project) => (
-            <article className={`project-card ${project.featured ? "project-card-featured" : ""}`} key={project.number} data-reveal style={{ "--project-index": project.number } as React.CSSProperties}>
+            <article className={`project-card ${project.featured ? "project-card-featured" : ""}`} key={project.number} data-reveal style={{ transitionDelay: `${Number(project.number) * 90}ms` }}>
               <div className="project-visual" aria-hidden="true">
                 <div className={`visual-art visual-art-${project.number}`}>
                   {project.number === "01" ? <><span className="art-node node-a" /><span className="art-node node-b" /><span className="art-node node-c" /><span className="art-link link-a" /><span className="art-link link-b" /><span className="art-core">E</span><span className="art-caption">LOCAL / RETRIEVAL / GENERATION</span></> :
