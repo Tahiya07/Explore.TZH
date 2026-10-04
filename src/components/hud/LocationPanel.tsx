@@ -29,7 +29,7 @@ export function LocationPanel({ location, hoveredLocation = null, onNavigate }: 
         <>
           <div className="location-panel__route" aria-label="Chamber markers">
             <span className="location-panel__route-label">
-              {project.status === "source-pending" ? "CHAMBER CONTEXT" : "PLANNED STUDY FLOW"}
+              {project.status === "active-project" ? "SYSTEM FLOW" : "PLANNED STUDY FLOW"}
             </span>
             <ol>
               {project.route.map((marker) => (
