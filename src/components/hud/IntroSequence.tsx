@@ -10,7 +10,7 @@ interface IntroSequenceProps {
 
 const bootSignals = [
   "NEURAL ENVIRONMENT ONLINE",
-  "RESEARCHER PROFILE: TAHIYA",
+  "RESEARCHER PROFILE: TAHIYA ZAREEN HIYA",
   "LABORATORY INTERFACE READY",
 ] as const;
 
@@ -44,11 +44,11 @@ export function IntroSequence({ complete, onEnter, reducedMotion }: IntroSequenc
 
         <div className="intro-sequence__identity">
           <h1 id="intro-title">TAHIYA</h1>
-          <p>AI RESEARCHER&nbsp; / &nbsp;ENGINEER&nbsp; / &nbsp;BUILDER</p>
+          <p>AI / ML ENGINEER&nbsp; / &nbsp;SOFTWARE DEVELOPER&nbsp; / &nbsp;BUILDER</p>
         </div>
 
         <p className="intro-sequence__description">
-          Enter an interactive research facility. Navigation remains available by keyboard and system map.
+          Enter an interactive research facility for Tahiya Zareen Hiya’s AI and software work.
         </p>
 
         <div className="intro-sequence__actions">
