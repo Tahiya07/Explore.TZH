@@ -1,8 +1,8 @@
 import { LabExperience } from "@/components/LabExperience";
 
 export const metadata = {
-  title: "The 3D Lab — Tahiya Zareen",
-  description: "An optional immersive 3D exploration of Tahiya Zareen's AI and engineering portfolio.",
+  title: "The 3D Lab — Tahiya Zareen Hiya",
+  description: "An optional immersive 3D exploration of Tahiya Zareen Hiya's AI and engineering portfolio.",
 };
 
 export default function LabPage() {
