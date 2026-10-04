@@ -11,7 +11,7 @@ export type ProjectId = (typeof projectIds)[number];
 
 export type LocationId = "core" | ProjectId | "research" | "engineering" | "contact";
 
-export type ProjectStatus = "source-pending" | "research-area";
+export type ProjectStatus = "source-pending" | "research-area" | "active-project";
 
 export type VisualSystem =
   | "split-pathway"
