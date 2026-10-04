@@ -8,7 +8,7 @@ const projects = [
     type: "THESIS · OFFLINE AI · RAG",
     title: "EduGuard",
     summary:
-      "A privacy-conscious academic assistant designed to run locally. It combines document ingestion, semantic retrieval, Bloom’s taxonomy classification, and guided learning workflows.",
+      "A lightweight multi-modal academic assistant designed for local, privacy-conscious use in university environments. It combines document and image ingestion, semantic retrieval, Bloom’s taxonomy classification, and guided academic workflows.",
     details: ["Qwen2.5", "FAISS + BGE-small", "llama.cpp", "FedProx"],
     href: "https://github.com/Tahiya07/Eduguard",
     accent: "blue",
@@ -18,7 +18,7 @@ const projects = [
     type: "UNIVERSITY · RAG · NEXT.JS",
     title: "UAP CSE Assistant",
     summary:
-      "A department-focused assistant that retrieves information from a curated knowledge base to help students navigate Computer Science and Engineering resources.",
+      "A department-focused retrieval assistant built around the University of Asia Pacific CSE website, helping students find information from a curated set of university pages through semantic search.",
     details: ["Next.js", "RAG", "BGE embeddings", "Capacitor"],
     href: "https://github.com/Tahiya07/Web-scraping",
     accent: "violet",
@@ -28,7 +28,7 @@ const projects = [
     type: "INTERNSHIP · RULE-BASED CHATBOT",
     title: "Elio",
     summary:
-      "A rule-based chatbot experience built as an internship project, with a responsive interface and a path to web and Android delivery without relying on a hosted LLM.",
+      "A rule-based chatbot built during an internship, focused on conversational interface design and cross-platform delivery for the web and Android without an LLM or external AI API.",
     details: ["React", "TypeScript", "Next.js", "Capacitor"],
     href: "https://github.com/Tahiya07/DecodeLabs-Internship",
     accent: "magenta",
@@ -39,12 +39,12 @@ const capabilities = [
   {
     index: "01",
     title: "AI / ML",
-    text: "LLMs, retrieval-augmented generation, deep learning, evaluation, and federated learning.",
+    text: "LLMs, NLP, retrieval-augmented generation, deep learning, evaluation, and federated learning.",
   },
   {
     index: "02",
     title: "SOFTWARE",
-    text: "Full-stack interfaces, APIs, application architecture, and practical deployment.",
+    text: "Full-stack interfaces, APIs, application architecture, databases, and practical deployment.",
   },
   {
     index: "03",
@@ -60,6 +60,9 @@ const technologies = [
   "FAISS",
   "llama.cpp",
   "FastAPI",
+  "Django",
+  "PostgreSQL",
+  "MySQL",
   "TypeScript",
   "React",
   "Next.js",
@@ -164,12 +167,14 @@ export default function Home() {
           <p>
             The portfolio is a map of systems I’ve built — from lightweight
             language models and local retrieval pipelines to real products
-            shipped for the web and mobile.
+            shipped for the web and mobile. I’m a Computer Science &amp;
+            Engineering student at the University of Asia Pacific, focused on
+            AI/ML engineering and software development.
           </p>
         </div>
         <div className="intro-side">
-          <span>RESEARCH MINDED</span>
-          <span>ENGINEERING LED</span>
+          <span>B.SC. CSE · UAP</span>
+          <span>CGPA 3.67 / 4.00</span>
         </div>
       </section>
 
@@ -263,15 +268,15 @@ export default function Home() {
 
           <div className="research-body">
             <p className="research-lead">
-              My current academic work explores lightweight multimodal
-              language-model systems for privacy-conscious academic assistance
-              in university environments.
+              My current academic work explores lightweight multi-modal
+              tiny-LLM systems for privacy-preserving academic assistance in
+              university environments.
             </p>
             <p>
-              The work brings together local inference, document
+              The work brings together local CPU inference, document and image
               understanding, semantic retrieval, Bloom’s taxonomy
-              classification, and model evaluation under practical resource
-              constraints.
+              classification, federated learning, and model evaluation under
+              practical resource constraints.
             </p>
             <div className="research-spec">
               <span>THESIS</span>
